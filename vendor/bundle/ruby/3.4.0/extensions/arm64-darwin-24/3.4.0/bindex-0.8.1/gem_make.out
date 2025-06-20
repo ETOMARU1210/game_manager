@@ -1,0 +1,18 @@
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/horiuchiinori/.rbenv/versions/3.4.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-xmiijt sitelibdir\=./.gem.20250620-60347-xmiijt clean
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-xmiijt sitelibdir\=./.gem.20250620-60347-xmiijt
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-xmiijt sitelibdir\=./.gem.20250620-60347-xmiijt install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20250620-60347-xmiijt/skiptrace/internal
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-xmiijt sitelibdir\=./.gem.20250620-60347-xmiijt clean

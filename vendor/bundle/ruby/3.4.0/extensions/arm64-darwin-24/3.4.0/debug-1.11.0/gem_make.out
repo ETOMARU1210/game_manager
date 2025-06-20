@@ -1,0 +1,19 @@
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+/Users/horiuchiinori/.rbenv/versions/3.4.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-dvj8cg sitelibdir\=./.gem.20250620-60347-dvj8cg clean
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-dvj8cg sitelibdir\=./.gem.20250620-60347-dvj8cg
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-dvj8cg sitelibdir\=./.gem.20250620-60347-dvj8cg install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20250620-60347-dvj8cg/debug
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-dvj8cg sitelibdir\=./.gem.20250620-60347-dvj8cg clean

@@ -1,0 +1,19 @@
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.7/ext/stringio
+/Users/horiuchiinori/.rbenv/versions/3.4.4/bin/ruby extconf.rb
+checking for rb_io_mode_t in ruby/io.h... no
+creating Makefile
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-ffrmyu sitelibdir\=./.gem.20250620-60347-ffrmyu clean
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-ffrmyu sitelibdir\=./.gem.20250620-60347-ffrmyu
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-ffrmyu sitelibdir\=./.gem.20250620-60347-ffrmyu install
+/usr/bin/install -c -m 0755 stringio.bundle ./.gem.20250620-60347-ffrmyu
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.7/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-ffrmyu sitelibdir\=./.gem.20250620-60347-ffrmyu clean

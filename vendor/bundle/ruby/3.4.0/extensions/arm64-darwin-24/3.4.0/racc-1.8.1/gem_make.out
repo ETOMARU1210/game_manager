@@ -1,0 +1,18 @@
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/horiuchiinori/.rbenv/versions/3.4.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-qgvzkj sitelibdir\=./.gem.20250620-60347-qgvzkj clean
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-qgvzkj sitelibdir\=./.gem.20250620-60347-qgvzkj
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-qgvzkj sitelibdir\=./.gem.20250620-60347-qgvzkj install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20250620-60347-qgvzkj/racc
+
+current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250620-60347-qgvzkj sitelibdir\=./.gem.20250620-60347-qgvzkj clean
