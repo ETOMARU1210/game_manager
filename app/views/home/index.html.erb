@@ -3,45 +3,9 @@
     <%= render "layouts/sidebar" %>
     <div class="col">
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4"> 
-            <div class="col h-100">
-                <div class="card">
-                <%= image_tag "nannyattakke-are.png", class: "card-img-top img-fluid img-thumbnail" %>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                     <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col h-100">
-                <div class="card">
-                    <%= image_tag "nannyattakke-are.png", class: "card-img-top img-fluid img-thumbnail" %>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                     <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
-            <div class="col h-100">
-                <div class="card">
-                    <%= image_tag "nannyattakke-are.png", class: "card-img-top img-fluid img-thumbnail" %>
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                     <div class="card-footer">
-                        <small class="text-body-secondary">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-            </div>
+            <%= render "layouts/card" %>
+            <%= render "layouts/card" %>
+            <%= render "layouts/card" %>
         </div>
      </div>
   </div>
