@@ -1,18 +1,48 @@
 <div class="container-fluid">
   <div class="row flex-nowrap">
     <%= render "layouts/sidebar" %>
-    <div class="col py-3">
-        <h3>Left Sidebar with Submenus</h3>
-        <p class="lead">
-            An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single 
-            menu is be open at a time. While the sidebar itself is not toggle-able, it does responsively shrink in width on smaller screens.
-        </p>
-        <ul class="list-unstyled">
-            <li>
-            <h5>Responsive</h5>
-            shrinks in width, hides text labels and collapses to icons only on mobile
-            </li>
-        </ul>
-    </div>
+    <div class="col">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4"> 
+            <div class="col h-100">
+                <div class="card">
+                <%= image_tag "nannyattakke-are.png", class: "card-img-top img-fluid img-thumbnail" %>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                     <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col h-100">
+                <div class="card">
+                    <%= image_tag "nannyattakke-are.png", class: "card-img-top img-fluid img-thumbnail" %>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                     <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col h-100">
+                <div class="card">
+                    <%= image_tag "nannyattakke-are.png", class: "card-img-top img-fluid img-thumbnail" %>
+                    <div class="card-body">
+                        <h5 class="card-title">Special title treatment</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                     <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
   </div>
 </div>
