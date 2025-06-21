@@ -19,10 +19,12 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    
   </head>
 
   <body>
     <%= render "layouts/header" %>
     <%= yield %>
+    <%= javascript_importmap_tags %>
   </body>
 </html>

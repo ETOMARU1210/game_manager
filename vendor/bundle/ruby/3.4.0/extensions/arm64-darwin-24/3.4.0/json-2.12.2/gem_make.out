@@ -8,16 +8,16 @@ checking for whether -std=c99 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/json-2.12.2/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-b6zs3l sitelibdir\=./.gem.20250620-60347-b6zs3l clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-gyzqso sitelibdir\=./.gem.20250621-36856-gyzqso clean
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/json-2.12.2/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-b6zs3l sitelibdir\=./.gem.20250620-60347-b6zs3l
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-gyzqso sitelibdir\=./.gem.20250621-36856-gyzqso
 compiling parser.c
 linking shared-object json/ext/parser.bundle
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/json-2.12.2/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-b6zs3l sitelibdir\=./.gem.20250620-60347-b6zs3l install
-/usr/bin/install -c -m 0755 parser.bundle ./.gem.20250620-60347-b6zs3l/json/ext
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-gyzqso sitelibdir\=./.gem.20250621-36856-gyzqso install
+/usr/bin/install -c -m 0755 parser.bundle ./.gem.20250621-36856-gyzqso/json/ext
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/json-2.12.2/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-b6zs3l sitelibdir\=./.gem.20250620-60347-b6zs3l clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-gyzqso sitelibdir\=./.gem.20250621-36856-gyzqso clean

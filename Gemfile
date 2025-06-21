@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby "3.4.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "8.0.2"
@@ -16,8 +17,9 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-
 gem "dartsass-rails"
+
+gem "mini_racer"
 
 gem "bootstrap"
 

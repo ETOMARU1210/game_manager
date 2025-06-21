@@ -26,18 +26,18 @@ checking for Random.bytes... yes
 creating Makefile
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/puma-6.6.0/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-ge6n9w sitelibdir\=./.gem.20250620-60347-ge6n9w clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-vrzuqo sitelibdir\=./.gem.20250621-36856-vrzuqo clean
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/puma-6.6.0/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-ge6n9w sitelibdir\=./.gem.20250620-60347-ge6n9w
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-vrzuqo sitelibdir\=./.gem.20250621-36856-vrzuqo
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
 linking shared-object puma/puma_http11.bundle
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/puma-6.6.0/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-ge6n9w sitelibdir\=./.gem.20250620-60347-ge6n9w install
-/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20250620-60347-ge6n9w/puma
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-vrzuqo sitelibdir\=./.gem.20250621-36856-vrzuqo install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20250621-36856-vrzuqo/puma
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/puma-6.6.0/ext/puma_http11
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-ge6n9w sitelibdir\=./.gem.20250620-60347-ge6n9w clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-vrzuqo sitelibdir\=./.gem.20250621-36856-vrzuqo clean

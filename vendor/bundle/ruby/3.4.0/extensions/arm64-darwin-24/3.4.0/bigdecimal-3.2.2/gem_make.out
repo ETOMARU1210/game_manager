@@ -26,17 +26,17 @@ checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.2.2/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-mo8zp2 sitelibdir\=./.gem.20250620-60347-mo8zp2 clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-pkikv sitelibdir\=./.gem.20250621-36856-pkikv clean
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.2.2/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-mo8zp2 sitelibdir\=./.gem.20250620-60347-mo8zp2
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-pkikv sitelibdir\=./.gem.20250621-36856-pkikv
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.bundle
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.2.2/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-mo8zp2 sitelibdir\=./.gem.20250620-60347-mo8zp2 install
-/usr/bin/install -c -m 0755 bigdecimal.bundle ./.gem.20250620-60347-mo8zp2
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-pkikv sitelibdir\=./.gem.20250621-36856-pkikv install
+/usr/bin/install -c -m 0755 bigdecimal.bundle ./.gem.20250621-36856-pkikv
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.2.2/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-mo8zp2 sitelibdir\=./.gem.20250620-60347-mo8zp2 clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-pkikv sitelibdir\=./.gem.20250621-36856-pkikv clean

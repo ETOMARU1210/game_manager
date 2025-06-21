@@ -6,13 +6,13 @@ checking for yaml_get_version() in -lyaml... yes
 creating Makefile
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-svi1rz sitelibdir\=./.gem.20250620-60347-svi1rz clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-9ytu7z sitelibdir\=./.gem.20250621-36856-9ytu7z clean
 cd libyaml && /Library/Developer/CommandLineTools/usr/bin/make clean
 /bin/sh: line 0: cd: libyaml: No such file or directory
 make: [clean-so] Error 1 (ignored)
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-svi1rz sitelibdir\=./.gem.20250620-60347-svi1rz
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-9ytu7z sitelibdir\=./.gem.20250621-36856-9ytu7z
 compiling psych.c
 compiling psych_emitter.c
 compiling psych_parser.c
@@ -22,11 +22,11 @@ linking shared-object psych.bundle
 ld: warning: ignoring duplicate libraries: '-lyaml'
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-svi1rz sitelibdir\=./.gem.20250620-60347-svi1rz install
-/usr/bin/install -c -m 0755 psych.bundle ./.gem.20250620-60347-svi1rz
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-9ytu7z sitelibdir\=./.gem.20250621-36856-9ytu7z install
+/usr/bin/install -c -m 0755 psych.bundle ./.gem.20250621-36856-9ytu7z
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-svi1rz sitelibdir\=./.gem.20250620-60347-svi1rz clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-9ytu7z sitelibdir\=./.gem.20250621-36856-9ytu7z clean
 cd libyaml && /Library/Developer/CommandLineTools/usr/bin/make clean
 /bin/sh: line 0: cd: libyaml: No such file or directory
 make: [clean-so] Error 1 (ignored)

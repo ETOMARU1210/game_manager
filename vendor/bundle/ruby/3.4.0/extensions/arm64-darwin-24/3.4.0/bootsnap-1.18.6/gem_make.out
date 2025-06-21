@@ -7,16 +7,16 @@ checking for whether -std=c99 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.18.6/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-hq14ge sitelibdir\=./.gem.20250620-60347-hq14ge clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-s9m7tw sitelibdir\=./.gem.20250621-36856-s9m7tw clean
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.18.6/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-hq14ge sitelibdir\=./.gem.20250620-60347-hq14ge
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-s9m7tw sitelibdir\=./.gem.20250621-36856-s9m7tw
 compiling bootsnap.c
 linking shared-object bootsnap/bootsnap.bundle
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.18.6/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-hq14ge sitelibdir\=./.gem.20250620-60347-hq14ge install
-/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20250620-60347-hq14ge/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-s9m7tw sitelibdir\=./.gem.20250621-36856-s9m7tw install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20250621-36856-s9m7tw/bootsnap
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/bootsnap-1.18.6/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-hq14ge sitelibdir\=./.gem.20250620-60347-hq14ge clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-s9m7tw sitelibdir\=./.gem.20250621-36856-s9m7tw clean

@@ -16,16 +16,16 @@ checking for ttyname_r()... yes
 creating Makefile
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.0/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-j5c7mv sitelibdir\=./.gem.20250620-60347-j5c7mv clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-92w8sa sitelibdir\=./.gem.20250621-36856-92w8sa clean
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.0/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-j5c7mv sitelibdir\=./.gem.20250620-60347-j5c7mv
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-92w8sa sitelibdir\=./.gem.20250621-36856-92w8sa
 compiling console.c
 linking shared-object io/console.bundle
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.0/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-j5c7mv sitelibdir\=./.gem.20250620-60347-j5c7mv install
-/usr/bin/install -c -m 0755 console.bundle ./.gem.20250620-60347-j5c7mv/io
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-92w8sa sitelibdir\=./.gem.20250621-36856-92w8sa install
+/usr/bin/install -c -m 0755 console.bundle ./.gem.20250621-36856-92w8sa/io
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/io-console-0.8.0/ext/io/console
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-j5c7mv sitelibdir\=./.gem.20250620-60347-j5c7mv clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-92w8sa sitelibdir\=./.gem.20250621-36856-92w8sa clean

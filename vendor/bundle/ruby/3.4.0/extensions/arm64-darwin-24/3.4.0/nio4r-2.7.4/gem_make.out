@@ -14,10 +14,10 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.4/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-vxrwn4 sitelibdir\=./.gem.20250620-60347-vxrwn4 clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-6bxvl9 sitelibdir\=./.gem.20250621-36856-6bxvl9 clean
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.4/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-vxrwn4 sitelibdir\=./.gem.20250620-60347-vxrwn4
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-6bxvl9 sitelibdir\=./.gem.20250621-36856-6bxvl9
 compiling bytebuffer.c
 compiling monitor.c
 compiling nio4r_ext.c
@@ -360,8 +360,8 @@ compiling selector.c
 linking shared-object nio4r_ext.bundle
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.4/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-vxrwn4 sitelibdir\=./.gem.20250620-60347-vxrwn4 install
-/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20250620-60347-vxrwn4
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-6bxvl9 sitelibdir\=./.gem.20250621-36856-6bxvl9 install
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20250621-36856-6bxvl9
 
 current directory: /Users/horiuchiinori/game_manager/vendor/bundle/ruby/3.4.0/gems/nio4r-2.7.4/ext/nio4r
-make DESTDIR\= sitearchdir\=./.gem.20250620-60347-vxrwn4 sitelibdir\=./.gem.20250620-60347-vxrwn4 clean
+make DESTDIR\= sitearchdir\=./.gem.20250621-36856-6bxvl9 sitelibdir\=./.gem.20250621-36856-6bxvl9 clean
