@@ -1,116 +1,28 @@
 <!-- filepath: /Users/horiuchiinori/game_manager/app/views/products/show.html.erb -->
+<!-- filepath: /Users/horiuchiinori/game_manager/app/views/products/show.html.erb -->
 <div class="container-fluid bg-light" style="height: 100vh;">
   <div class="row h-100">
-    <!-- サイドバー（タスク管理） -->
-    <div class="col-3 col-md-2 bg-white text-dark d-flex flex-column p-0 border-end">
-      <div class="p-3 border-bottom">
-        <h5>タスク管理</h5>
-         <button class="btn btn-primary btn-sm w-100 mb-2" data-bs-toggle="modal" data-bs-target="#taskModal">
-            <i class="bi bi-plus-circle"></i> タスク作成
-        </button>
-      </div>
-      <ul class="list-group list-group-flush flex-grow-1 overflow-auto">
-        <li class="list-group-item bg-white text-dark border-0">タスク1</li>
-        <li class="list-group-item bg-white text-dark border-0">タスク2</li>
-        <li class="list-group-item bg-white text-dark border-0">タスク3</li>
-        <!-- タスクをここに追加 -->
-      </ul>
-      <div class="mt-auto p-3 border-top small text-secondary">
-        <span>管理メニュー</span>
-      </div>
+    <!-- 左サイドバー（PCのみ） -->
+    <div class="col-3 col-md-2 bg-white text-dark d-none d-md-flex flex-column p-0 border-end h-100">
+      <%= render "layouts/task_sidebar" %>
     </div>
-
-    <!-- チャットルーム（中央） -->
-    <div class="col-6 col-md-8 d-flex flex-column p-0 bg-light">
-      <!-- チャットヘッダー -->
-      <div class="p-3 border-bottom bg-white">
-        <h5 class="mb-0 text-dark"><i class="bi bi-hash"></i> チャットルーム名</h5>
-      </div>
-      <!-- チャットメッセージ表示エリア -->
-      <div class="flex-grow-1 overflow-auto p-3 bg-light" id="chat-messages">
-        <!-- サンプルメッセージ -->
-        <div class="d-flex mb-3 align-items-start">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
-          <div>
-            <div class="d-flex align-items-center">
-              <span class="fw-bold text-dark me-2">ユーザー名</span>
-              <span class="text-muted small">10:00</span>
-            </div>
-            <div class="text-dark">こんにちは！</div>
-          </div>
-        </div>
-        <div class="d-flex mb-3 align-items-start">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
-          <div>
-            <div class="d-flex align-items-center">
-              <span class="fw-bold text-dark me-2">別ユーザー</span>
-              <span class="text-muted small">10:01</span>
-            </div>
-            <div class="text-dark">やあ！</div>
-          </div>
-        </div>
-        <!-- ここにメッセージを追加 -->
-      </div>
-      <!-- チャット入力エリア -->
-      <div class="p-3 border-top bg-white">
-        <form class="d-flex" id="chat-form">
-          <input type="text" class="form-control me-2 bg-white text-dark border-0" placeholder="メッセージを入力..." id="chat-input" autocomplete="off" />
-          <button class="btn btn-primary" type="submit">Send</button>
-        </form>
-      </div>
+    <!-- 中央チャットルーム -->
+    <div class="col-12 col-md-8 d-flex flex-column h-100 min-vh-100 p-0 bg-light h-100">
+      <%= render "layouts/chat_room" %>
     </div>
-
-    <!-- 右サイド（タスクについて） -->
-    <div class="col-3 col-md-2 bg-white d-flex flex-column p-0 border-start">
-      <div class="p-3 border-bottom">
-        <h6>タスクについて</h6>
-      </div>
-      <div class="flex-grow-1 overflow-auto">
-        <div class="mb-3">
-          <h6 class="text-primary">確認待ちタスク</h6>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item border-0">確認待ちタスク1</li>
-            <li class="list-group-item border-0">確認待ちタスク2</li>
-            <!-- ここに確認待ちタスクを追加 -->
-          </ul>
-        </div>
-        <div>
-          <h6 class="text-success">完了済みタスク</h6>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item border-0 text-success">完了タスク1</li>
-            <li class="list-group-item border-0 text-success">完了タスク2</li>
-            <!-- ここに完了済みタスクを追加 -->
-          </ul>
-        </div>
-      </div>
+    <!-- 右サイドバー（PCのみ） -->
+    <div class="col-3 col-md-2 bg-white d-none d-md-flex flex-column p-0 border-start h-100">
+      <%= render "layouts/task_info_sidebar" %>
     </div>
   </div>
 </div>
 
-<!-- タスク作成モーダル -->
-<div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="taskModalLabel">タスク作成</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="taskName" class="form-label">タスク名</label>
-            <input type="text" class="form-control" id="taskName" placeholder="タスク名を入力">
-          </div>
-          <div class="mb-3">
-            <label for="taskDetail" class="form-label">詳細</label>
-            <textarea class="form-control" id="taskDetail" rows="3" placeholder="詳細を入力"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
-        <button type="button" class="btn btn-primary">作成</button>
-      </div>
-    </div>
-  </div>
+<!-- 左オフキャンバス（スマホ用タスク管理） -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="leftOffcanvas" aria-labelledby="leftOffcanvasLabel">
+  <%= render "layouts/task_sidebar" %>
+</div>
+
+<!-- 右オフキャンバス（スマホ用タスクについて） -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="rightOffcanvas" aria-labelledby="rightOffcanvasLabel">
+  <%= render "layouts/task_info_sidebar" %>
 </div>
