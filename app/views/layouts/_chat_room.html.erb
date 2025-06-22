@@ -1,5 +1,5 @@
 <!-- filepath: /Users/horiuchiinori/game_manager/app/views/layouts/_chat_room.html.erb -->
-<div class="d-flex flex-column flex-grow-1">
+<div class="d-flex flex-column" style="height: 100vh;">
   <!-- チャットルームヘッダー -->
   <div class="p-3 border-bottom bg-white d-flex align-items-center justify-content-between">
     <h5 class="mb-0 text-dark"><i class="bi bi-chat-dots"></i> チャットルーム</h5>
@@ -12,14 +12,18 @@
       </button>
     </div>
   </div>
-  <!-- チャットメッセージ表示エリア -->
-  <div class="flex-grow-1 overflow-auto p-3 bg-light" id="chat-messages">
-    <% @posts.each do |post| %>
-      <div class="mb-2">
-        <span class="fw-bold"><%= post.user&.name || "名無し" %>:</span>
-        <span><%= post.comment %></span>
-      </div>
-    <% end %>
+  <!-- チャットメッセージ表示エリア（ここだけスクロール） -->
+  <div class="flex-grow-1 overflow-auto p-3 bg-light d-flex flex-column" id="chat-messages" style="min-height:0;">
+    <div class="mt-auto">
+      <% @posts.each do |post| %>
+        <div class="mb-2 d-flex">
+          <div class="bg-white rounded px-3 py-2 shadow-sm" style="max-width: 70%;">
+            <span class="fw-bold text-primary"><%= post.user&.name || "名無し" %></span>
+            <div class="text-break"><%= post.comment %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
   <!-- メッセージ入力フォーム -->
   <div class="p-3 border-top bg-white">
@@ -33,3 +37,12 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  document.addEventListener("turbo:load", function() {
+    var chatMessages = document.getElementById("chat-messages");
+    if(chatMessages) {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  });
+</script>
