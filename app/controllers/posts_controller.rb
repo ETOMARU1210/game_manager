@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+    before_action :move_to_signed_in, only: [:create, :destroy]
+    before_action :post_params, only: [:create, :destroy]
+
     def create
         @post = Post.new(post_params)
         if @post.save
@@ -17,4 +20,12 @@ class PostsController < ApplicationController
     def post_params
       params.require(:user).permit(:username, :comment)
     end
+
+    private
+    def move_to_signed_in
+      unless user_signed_in?
+        #サインインしていないユーザーはログインページが表示される
+        redirect_to  '/users/sign_in'
+    end
+  end
 end

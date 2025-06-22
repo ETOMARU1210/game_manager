@@ -1,0 +1,9 @@
+<p><%= @email %> さん</p>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>ご登録のメールアドレスを <%= @resource.unconfirmed_email %> へ変更する手続きが行われました。</p>
+  <p>この変更に心当たりがない場合は、至急サポートまでご連絡ください。</p>
+<% else %>
+  <p>ご登録のメールアドレスが <%= @resource.email %> に変更されました。</p>
+  <p>この変更に心当たりがない場合は、至急サポートまでご連絡ください。</p>
+<% end %>
