@@ -2,13 +2,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   root "home#index"
   resources :home, only: [:index]
-  resources :products
+  resources :products, only: [:show]
   resources :tasks, only: [:create, :destroy]
   resources :posts, only: [:create, :destroy]
   devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions'
+      registrations: 'users/registrations',
+      sessions: 'users/sessions'
   }
-  resources :home, only: [:index]
-  resources :products, only: [:show]
 end
