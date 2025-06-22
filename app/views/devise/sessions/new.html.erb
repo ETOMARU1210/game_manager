@@ -4,6 +4,8 @@
       <div class="card shadow-sm">
         <div class="card-body">
           <h2 class="card-title text-center mb-4">ログイン</h2>
+          <!-- エラーメッセージ表示 -->
+          <%= render "devise/shared/error_messages", resource: resource %>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="mb-3">
               <%= f.label :email, "メールアドレス", class: "form-label" %>

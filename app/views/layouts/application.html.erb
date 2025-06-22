@@ -24,7 +24,13 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%= yield %>
-    <%= javascript_importmap_tags %>
+    <% if notice.present? %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  <%= yield %>
+  <%= javascript_importmap_tags %>
   </body>
 </html>
