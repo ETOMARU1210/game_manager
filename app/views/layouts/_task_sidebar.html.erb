@@ -20,9 +20,12 @@
   </form>
 </div>
 <ul class="list-group list-group-flush flex-grow-1 overflow-auto">
-  <li class="list-group-item bg-white text-dark border-0">タスク1</li>
-  <li class="list-group-item bg-white text-dark border-0">タスク2</li>
-  <li class="list-group-item bg-white text-dark border-0">タスク3</li>
+  <% @tasks.each do |task| %>
+    <li class="list-group-item bg-white text-dark border-0">
+      <div class="fw-bold"><%= task.title %></div>
+      <div class="small text-muted"><%= task.description %></div>
+    </li>
+  <% end %>
 </ul>
 <div class="mt-auto p-3 border-top small text-secondary">
   <span>管理メニュー</span>

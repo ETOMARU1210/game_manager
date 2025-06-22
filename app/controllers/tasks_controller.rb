@@ -3,11 +3,6 @@ class TasksController < ApplicationController
     before_action :move_to_signed_in, only: [:create, :destroy]
     before_action :task_params, only: [:create, :destroy]
 
-    def index
-        @task = Task.new
-        @tasks = Task.all
-    end
-
     def new
         @task = Task.new
     end
@@ -15,7 +10,8 @@ class TasksController < ApplicationController
     def create
         @task = Task.new(task_params)
         if @task.save
-            redirect_to tasks_path, notice: 'Task was successfully created.'
+            flash[:notice] = 'タスクを作成いたしました。'
+            redirect_to root_path
         else
             render :new
         end
@@ -28,7 +24,7 @@ class TasksController < ApplicationController
     end
 
     def task_params
-      params.require(:task).permit(:title, :description, :waiting, :completed)
+      params.require(:task).permit(:title, :description)
     end
 
     private
@@ -36,5 +32,6 @@ class TasksController < ApplicationController
       unless user_signed_in?
         #サインインしていないユーザーはログインページが表示される
         redirect_to  '/users/sign_in'
+      end
     end
 end
