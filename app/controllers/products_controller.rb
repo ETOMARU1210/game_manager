@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
     def show
         @task = Task.new
         @post = Post.new
-        @posts = Post.all
+        @posts = current_user.posts.all
         @tasks = Task.all
     end
 

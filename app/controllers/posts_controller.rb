@@ -3,22 +3,25 @@ class PostsController < ApplicationController
     before_action :post_params, only: [:create, :destroy]
 
     def create
-        @post = Post.new(post_params)
+        @post = current_user.posts.build(post_params)
+
         if @post.save
-            redirect_to tasks_path, notice: 'Task was successfully created.'
+            flash[:notice] = 'コメントを投稿しました。'
+            redirect_to root_path
         else
-            render :new
+            render "home/index"
         end
     end
 
     def destroy
-        @post = Post.find(params[:id])
+        @post = current_user.posts.find(params[:id])
         @post.destroy
-        redirect_to tasks_path, notice: 'Post was successfully deleted.'
+        flash[:notice] = 'コメントを削除しました。'
+        redirect_to root_path
     end
 
     def post_params
-      params.require(:user).permit(:username, :comment)
+      params.require(:post).permit(:comment)
     end
 
     private
