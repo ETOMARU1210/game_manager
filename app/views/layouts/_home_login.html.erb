@@ -1,0 +1,19 @@
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <%= render "layouts/sidebar" %>
+      <div class="col">
+        <!-- プロジェクト作成ボタン（モーダル起動） -->
+        <div class="d-flex justify-content-end my-3">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectCreateModal">
+            プロジェクトを作成
+          </button>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+          <% @projects.each do |project| %>
+            <%= render "layouts/card", project: project %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "layouts/project_create_modal" %>
