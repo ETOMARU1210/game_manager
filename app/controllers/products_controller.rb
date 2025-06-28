@@ -1,17 +1,19 @@
 class ProductsController < ApplicationController
-    before_action :move_to_signed_in, only: [:show]
+  before_action :move_to_signed_in, only: [:show]
 
-    def show
-        @task = Task.new
-        @post = Post.new
-        @posts = current_user.posts.all
-        @tasks = Task.all
-    end
+  def show
+    @project = current_user.projects.find(params[:id])
+    @posts = @project.posts.order(created_at: :asc)
+    @task = @project.tasks.build
+    @post = @project.posts.build
+    @tasks = @project.tasks.order(created_at: :asc)
+  end
 
-    def move_to_signed_in
-      unless user_signed_in?
-        #サインインしていないユーザーはログインページが表示される
-        redirect_to  '/users/sign_in'
-      end
+  private
+
+  def move_to_signed_in
+    unless user_signed_in?
+      redirect_to '/users/sign_in'
     end
+  end
 end

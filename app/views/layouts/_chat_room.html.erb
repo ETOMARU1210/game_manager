@@ -1,23 +1,22 @@
-<!-- filepath: /Users/horiuchiinori/game_manager/app/views/layouts/_chat_room.html.erb -->
-<div class="d-flex flex-column" style="height: 100vh;">
+<div class="d-flex flex-column" style="height: calc(100vh - 56px);">
   <!-- チャットルームヘッダー -->
-  <div class="p-3 border-bottom bg-white d-flex align-items-center justify-content-between">
-    <h5 class="mb-0 text-dark"><i class="bi bi-chat-dots"></i> チャットルーム</h5>
-    <div class="d-block d-md-none">
-      <button class="btn btn-outline-primary me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#leftOffcanvas" aria-controls="leftOffcanvas">
-        <i class="bi bi-list"></i> タスク管理
-      </button>
-      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#rightOffcanvas" aria-controls="rightOffcanvas">
-        <i class="bi bi-info-circle"></i> タスクについて
-      </button>
-    </div>
+  <div class="border-bottom bg-white d-flex align-items-center" style="padding: 0.75rem 1.25rem;">
+    <h5 class="mb-0 text-dark d-flex align-items-center flex-grow-1" style="font-size: 1.3rem;">
+      <i class="bi bi-chat-dots me-2" style="font-size: 1.7rem; color: #0d6efd;"></i>
+      <span class="fw-bold me-3" style="font-size: 1.2em;">チャットルーム</span>
+      <% if defined?(@chat_room) && @chat_room.respond_to?(:title) %>
+        <span class="px-3 py-1 rounded bg-secondary bg-opacity-10 text-secondary small" style="font-weight: 500; font-size: 1em; min-width: 180px; text-align: center;">
+          <%= @chat_room.title %>
+        </span>
+      <% end %>
+    </h5>
   </div>
-  <!-- チャットメッセージ表示エリア（ここだけスクロール） -->
-  <div class="flex-grow-1 overflow-auto p-3 bg-light d-flex flex-column" id="chat-messages" style="min-height:0;">
+  <!-- チャットメッセージ表示エリア -->
+  <div class="overflow-auto bg-light d-flex flex-column flex-grow-1" id="chat-messages" style="min-height:0;">
     <div class="mt-auto">
       <% @posts.each do |post| %>
-        <div class="mb-2 d-flex">
-          <div class="bg-white rounded px-3 py-2 shadow-sm" style="max-width: 70%;">
+        <div class="mb-1 d-flex">
+          <div class="bg-white rounded px-3 py-2 shadow-sm">
             <span class="fw-bold text-primary"><%= post.user&.name || "名無し" %></span>
             <div class="text-break"><%= post.comment %></div>
           </div>
@@ -27,11 +26,17 @@
   </div>
   <!-- メッセージ入力フォーム -->
   <div class="p-3 border-top bg-white">
-    <%= form_with model: @post do |form| %>
+    <%= form_with(model: [@project, @post]) do |f| %>
       <div class="input-group">
-        <%= form.text_area :comment, class: "form-control", placeholder: "メッセージを入力...", id: "chat-input", rows: 3, style: "resize:vertical; min-height:48px; max-height:150px;" %>
-        <%= form.submit "送信", class: "btn btn-primary", id: "send-button" do %>
-            <i class="bi bi-send"></i> 送信
+        <%= f.text_area :comment,
+              class: "form-control",
+              placeholder: "メッセージを入力...",
+              id: "chat-input",
+              rows: 2
+        %>
+        <%= f.submit class: "btn btn-primary px-2 px-md-3", id: "send-button" do %>
+          <i class="bi bi-send"></i>
+          <span class="d-none d-md-inline">送信</span>
         <% end %>
       </div>
     <% end %>

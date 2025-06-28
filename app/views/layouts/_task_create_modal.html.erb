@@ -7,18 +7,18 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
       </div>
       <div class="modal-body">
-        <%= form_with model: @task, url: tasks_path, local: true do |form| %>
+        <%= form_with(model: [@project, @task]) do |f| %>
           <div class="mb-3">
-            <%= form.label :title, "タスク名", class: "form-label" %>
-            <%= form.text_field :title, class: "form-control", placeholder: "タスク名を入力" %>
+            <%= f.label :title, "タスク名", class: "form-label" %>
+            <%= f.text_field :title, class: "form-control", placeholder: "タスク名を入力" %>
           </div>
           <div class="mb-3">
-            <%= form.label :description, "詳細", class: "form-label" %>
-            <%= form.text_area :description, class: "form-control", rows: 5, placeholder: "詳細を入力" %>
+            <%= f.label :description, "詳細", class: "form-label" %>
+            <%= f.text_area :description, class: "form-control", rows: 5, placeholder: "詳細を入力" %>
           </div>
           <div class="modal-footer px-0">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
-            <%= form.submit "作成", class: "btn btn-primary" %>
+            <%= f.submit "作成", class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>

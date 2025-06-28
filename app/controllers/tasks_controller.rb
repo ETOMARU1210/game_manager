@@ -4,34 +4,40 @@ class TasksController < ApplicationController
     before_action :task_params, only: [:create, :destroy]
 
     def new
-        @task = Task.new
+        @project = current_user.projects.find(params[:project_id])
+        @task = @project.tasks.new
     end
 
     def create
-        @task = Task.new(task_params)
+        @project = current_user.projects.find(params[:project_id])
+        @task = @project.tasks.build(task_params)
+        @tasks = @project.tasks.order(created_at: :asc)
+        @post = @project.posts.build
+        @posts = @project.posts.order(created_at: :asc)
         if @task.save
             flash[:notice] = 'タスクを作成いたしました。'
-            redirect_to root_path
+            redirect_to product_path(@project)
         else
-            render :new
+            render template: "products/show" 
         end
     end
 
     def destroy
         @task = Task.find(params[:id])
+        flash[:notice] = 'タスクを削除しました。'
         @task.destroy
-        redirect_to tasks_path, notice: 'Task was successfully deleted.'
+        redirect_to tasks_path
     end
+
+    private
 
     def task_params
       params.require(:task).permit(:title, :description)
     end
 
-    private
     def move_to_signed_in
       unless user_signed_in?
-        #サインインしていないユーザーはログインページが表示される
-        redirect_to  '/users/sign_in'
+        redirect_to '/users/sign_in'
       end
     end
 end

@@ -22,15 +22,17 @@
     
   </head>
 
-  <body>
-    <%= render "layouts/header" %>
+<body class="h-100">
+  <%= render "layouts/header" %>
+  <div class="container-fluid">
     <% if notice.present? %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert.present? %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-  <%= yield %>
+    <%= yield %>
+  </div>
   <%= javascript_importmap_tags %>
-  </body>
+</body>
 </html>

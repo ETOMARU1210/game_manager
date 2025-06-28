@@ -1,15 +1,22 @@
 <div class="col">
-        <div class="card">
-        <%= link_to "/products/1", class: "text-dark link-underline link-underline-opacity-0" do %>
-            <%= image_tag "nannyattakke-are.png", class: "card-img-top img-fluid img-thumbnail" %>
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-                <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-            </div>
-        <% end %>
-    </div>
+  <div class="card h-100">
+    <%= link_to product_path(project), class: "text-dark link-underline link-underline-opacity-0" do %>
+      <%# プロジェクト画像があれば表示、なければデフォルト画像 %>
+      <%# if project.image_url.present? %>
+        <%# <%= image_tag(project.image_url, class: "card-img-top img-fluid img-thumbnail") %> %>
+      <%# else %>
+        <%= image_tag("nannyattakke-are.png", class: "card-img-top img-fluid img-thumbnail") %>
+      <%# end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= project.name %></h5>
+        <p class="card-text"><%= project.description %></p>
+        <a href="<%= product_path(project) %>" class="btn btn-primary">詳細を見る</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">
+          最終更新 <%= l(project.updated_at, format: :short) %>
+        </small>
+      </div>
+    <% end %>
+  </div>
 </div>

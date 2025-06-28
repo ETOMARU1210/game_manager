@@ -1,37 +1,48 @@
-<!-- filepath: /Users/horiuchiinori/game_manager/app/views/layouts/task_sidebar.html.erb -->
-<div class="p-3 border-bottom">
-  <h5>タスク管理</h5>
-  <!-- PCのみ：モーダルでタスク作成 -->
-  <button class="btn btn-primary btn-sm w-100 mb-2 d-none d-md-block" data-bs-toggle="modal" data-bs-target="#taskModal">
-    <i class="bi bi-plus-circle"></i> タスク作成
-  </button>
-  <!-- スマホのみ：インラインでタスク作成フォーム表示 -->
-  <button class="btn btn-primary btn-sm w-100 mb-2 d-block d-md-none" type="button" onclick="document.getElementById('mobile-task-form').classList.toggle('d-none')">
-    <i class="bi bi-plus-circle"></i> タスク作成
-  </button>
-  <form id="mobile-task-form" class="d-none d-md-none mt-2" autocomplete="off">
-    <div class="mb-2">
-      <input type="text" class="form-control" placeholder="タスク名を入力">
-    </div>
-    <div class="mb-2">
-      <textarea class="form-control" rows="2" placeholder="詳細を入力"></textarea>
-    </div>
-    <button type="submit" class="btn btn-success btn-sm w-100">作成</button>
-  </form>
-</div>
-<ul class="list-group list-group-flush flex-grow-1 overflow-auto">
-  <% @tasks.each do |task| %>
-    <li class="list-group-item bg-white text-dark border-0">
-      <div class="fw-bold"><%= task.title %></div>
-      <div class="small text-muted"><%= task.description %></div>
-    </li>
+<!-- filepath: /Users/horiuchiinori/game_manager/app/views/layouts/_task_sidebar.html.erb -->
+<div class="d-flex flex-column">
+  <div class="p-3 border-bottom">
+    <h5>タスク管理</h5>
+    <!-- PCのみ：モーダルでタスク作成 -->
+    <button class="btn btn-primary btn-sm w-100 mb-2 d-none d-md-block" data-bs-toggle="modal" data-bs-target="#taskModal">
+      <i class="bi bi-plus-circle"></i> タスク作成
+    </button>
+    <!-- スマホのみ：インラインでタスク作成フォーム表示 -->
+    <button class="btn btn-primary btn-sm w-100 mb-2 d-block d-md-none" type="button">
+      <i class="bi bi-plus-circle"></i> タスク作成
+    </button>
+    <form id="mobile-task-form" class="d-none d-md-none mt-2" autocomplete="off">
+      <div class="mb-2">
+        <input type="text" class="form-control" placeholder="タスク名を入力">
+      </div>
+      <div class="mb-2">
+        <textarea class="form-control" rows="2" placeholder="詳細を入力"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success btn-sm w-100">作成</button>
+    </form>
+  </div>
+  <ul class="list-group list-group-flush flex-grow-1 overflow-auto mb-0">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item bg-white text-dark border-0 d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between">
+        <div class="flex-grow-1 mb-2 mb-md-0">
+          <div class="fw-bold"><%= task.title %></div>
+          <div class="small text-muted"><%= task.description %></div>
+        </div>
+        <div class="d-flex gap-1">
+          <button type="button" class="btn btn-outline-warning btn-sm">
+            確認待ち
+          </button>
+          <button type="button" class="btn btn-outline-success btn-sm">
+            完了済み
+          </button>
+        </div>
+      </li>
   <% end %>
 </ul>
-<div class="mt-auto p-3 border-top small text-secondary">
-  <span>管理メニュー</span>
-</div>
-
-<!-- PCのみ：タスク作成モーダル -->
-<div class="d-none d-md-block">
-  <%= render "layouts/task_create_modal" %>
+  <div class="p-3 border-top small text-secondary text-truncate" style="overflow:hidden;">
+    <span>管理メニュー</span>
+  </div>
+  <!-- PCのみ：タスク作成モーダル -->
+  <div class="d-none d-md-block">
+    <%= render "layouts/task_create_modal" %>
+  </div>
 </div>

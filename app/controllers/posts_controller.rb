@@ -1,34 +1,36 @@
 class PostsController < ApplicationController
-    before_action :move_to_signed_in, only: [:create, :destroy]
-    before_action :post_params, only: [:create, :destroy]
+  before_action :move_to_signed_in, only: [:create, :destroy]
 
-    def create
-        @post = current_user.posts.build(post_params)
+  def create
+    @project = current_user.projects.find(params[:project_id])
+    @post = @project.posts.build(post_params)
+    @post.user = current_user
 
-        if @post.save
-            flash[:notice] = 'コメントを投稿しました。'
-            redirect_to root_path
-        else
-            render "home/index"
-        end
+    if @post.save
+      flash[:notice] = 'コメントを投稿しました。'
+      redirect_to product_path(@project)
+    else
+      render template: "products/show"
     end
+  end
 
-    def destroy
-        @post = current_user.posts.find(params[:id])
-        @post.destroy
-        flash[:notice] = 'コメントを削除しました。'
-        redirect_to root_path
-    end
+  def destroy
+    @project = current_user.projects.find(params[:project_id])
+    @post = @project.posts.find(params[:id])
+    @post.destroy
+    flash[:notice] = 'コメントを削除しました。'
+    redirect_to root_path
+  end
 
-    def post_params
-      params.require(:post).permit(:comment)
-    end
+  private
 
-    private
-    def move_to_signed_in
-      unless user_signed_in?
-        #サインインしていないユーザーはログインページが表示される
-        redirect_to  '/users/sign_in'
+  def post_params
+    params.require(:post).permit(:comment)
+  end
+
+  def move_to_signed_in
+    unless user_signed_in?
+      redirect_to '/users/sign_in'
     end
   end
 end
