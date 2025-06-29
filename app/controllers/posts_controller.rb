@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def create
     @project = current_user.projects.find(params[:project_id])
     @post = @project.posts.build(post_params)
+    @post.reply_to = params[:reply_to] if params[:reply_to].present?
     @post.user = current_user
 
     if @post.save

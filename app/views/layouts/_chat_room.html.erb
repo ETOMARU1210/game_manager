@@ -14,40 +14,61 @@
   <!-- チャットメッセージ表示エリア -->
   <div class="overflow-auto bg-light d-flex flex-column flex-grow-1" id="chat-messages" style="min-height:0;">
     <div class="mt-auto">
-      <% @posts.each do |post| %>
-        <div class="mb-1 d-flex">
-          <div class="bg-white rounded px-3 py-2 shadow-sm">
-            <span class="fw-bold text-primary"><%= post.user&.name || "名無し" %></span>
-            <div class="text-break"><%= post.comment %></div>
+<% @posts.each do |post| %>
+  <div class="mb-1 d-flex">
+    <div class="bg-white rounded px-3 py-2 shadow-sm flex-grow-1">
+      <% if post.reply_to.present? %>
+        <% reply_post = @posts.find { |p| p.id == post.reply_to } %>
+        <% if reply_post %>
+          <div class="small text-muted">
+            返信先:
+            <a href="#reply-<%= reply_post.id %>" class="fw-bold text-primary text-decoration-underline">
+              <%= reply_post.user&.name || "名無し" %>
+            </a>
+            <span class="text-muted">「<%= reply_post.comment.truncate(30) %>」</span>
           </div>
+        <% else %>
+          <div class="small text-muted">返信先: <%= post.reply_to %></div>
+        <% end %>
+      <% end %>
+      <span id="reply-<%= post.id %>" class="fw-bold text-primary"><%= post.user&.name || "名無し" %></span>
+      <div class="text-break"><%= simple_format_without_blank_lines(post.comment) %></div>
+      <% if post.user_id == current_user.id %>
+        <div class="mt-1">
+          <%= link_to "返信する", request.path + "?reply_to=#{post.id}#chat-input", class: "btn btn-link btn-sm p-0" %>
         </div>
       <% end %>
     </div>
   </div>
+<% end %>
+    </div>
+  </div>
   <!-- メッセージ入力フォーム -->
-  <div class="p-3 border-top bg-white">
-    <%= form_with(model: [@project, @post]) do |f| %>
-      <div class="input-group">
-        <%= f.text_area :comment,
-              class: "form-control",
-              placeholder: "メッセージを入力...",
-              id: "chat-input",
-              rows: 2
-        %>
-        <%= f.submit class: "btn btn-primary px-2 px-md-3", id: "send-button" do %>
-          <i class="bi bi-send"></i>
-          <span class="d-none d-md-inline">送信</span>
-        <% end %>
+<div class="p-3 border-top bg-white">
+  <% if params[:reply_to].present? %>
+    <% reply_post = @posts.find { |p| p.id == params[:reply_to].to_i } %>
+    <% if reply_post %>
+      <div class="alert alert-secondary py-2 px-3 mb-2 d-flex align-items-center">
+        <span class="fw-bold text-primary me-2"><%= reply_post.user&.name || "名無し" %>さんへの返信</span>
+        <span class="flex-grow-1 text-muted small"><%= reply_post.comment.truncate(30) %></span>
+        <a href="<%= request.path %>#chat-input" class="btn-close ms-2" aria-label="返信をキャンセル"></a>
       </div>
     <% end %>
-  </div>
+  <% end %>
+  <%= form_with(model: [@project, @post]) do |f| %>
+    <%= hidden_field_tag :reply_to, params[:reply_to] if params[:reply_to].present? %>
+    <div class="input-group">
+      <%= f.text_area :comment,
+            class: "form-control",
+            placeholder: params[:reply_to].present? ? "返信内容を入力..." : "メッセージを入力...",
+            id: "chat-input",
+            rows: 2
+      %>
+      <%= f.submit class: "btn btn-primary px-2 px-md-3", id: "send-button" do %>
+        <i class="bi bi-send"></i>
+        <span class="d-none d-md-inline">送信</span>
+      <% end %>
+    </div>
+  <% end %>
 </div>
-
-<script>
-  document.addEventListener("turbo:load", function() {
-    var chatMessages = document.getElementById("chat-messages");
-    if(chatMessages) {
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-  });
-</script>
+</div>
